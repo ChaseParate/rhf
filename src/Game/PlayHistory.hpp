@@ -10,6 +10,7 @@ public:
     CPlayHistory(void) {}
 
     void fn_8009A704(void);
+    void fn_8009A710(void);
 
 private:
     u8 _pad[0x44 - 0x4];

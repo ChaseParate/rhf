@@ -642,15 +642,37 @@ Game/Tutorial/MyFlow.cpp:
 
 Game/Title/SceneTitle.cpp:
 	.text       start:0x80092094 end:0x80092954
+	.rodata     start:0x80256080 end:0x80256120
+	.data       start:0x802ED780 end:0x802ED7C0
+	.sdata      start:0x8031F5B0 end:0x8031F5B8
+	.sdata2     start:0x803254E0 end:0x80325508
 
 Game/Title/MyChecker.cpp:
 	.text       start:0x80092954 end:0x80092A50
+	.rodata     start:0x80256120 end:0x80256138
+	.data       start:0x802ED7C0 end:0x802ED818
+	.sdata      start:0x8031F5B8 end:0x8031F5C0
 
 Game/Title/MyFlow.cpp:
 	.text       start:0x80092A50 end:0x80092C50
+	.rodata     start:0x80256138 end:0x80256148
+	.data       start:0x802ED818 end:0x802ED858
+	.sdata      start:0x8031F5C0 end:0x8031F5C8
 
-Game/Title/MyLayout.cpp:
-	.text       start:0x80092C50 end:0x80097478
+Game/Title/MyLayoutF.cpp:
+	.text       start:0x80092C50 end:0x80097270
+	.rodata     start:0x80256148 end:0x80256A48
+	.data       start:0x802ED858 end:0x802EDBE0
+	.sdata      start:0x8031F5C8 end:0x8031F640
+	.sbss       start:0x803204B0 end:0x803204B8
+	.sdata2     start:0x80325508 end:0x80325510
+	.bss        start:0x8034C820 end:0x8034C840
+
+Game/Title/MyLayoutT.cpp:
+	.text       start:0x80097270 end:0x80097478
+	.rodata     start:0x80256A48 end:0x80256B40
+	.data       start:0x802EE2A8 end:0x802EE330
+	.sdata      start:0x8031F640 end:0x8031F650
 
 Game/Cafe/MyChecker.cpp:
 	.text       start:0x80097478 end:0x80097574

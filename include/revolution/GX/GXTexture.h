@@ -44,6 +44,7 @@ void GXGetTexObjLODAll(GXTexObj* obj, GXTexFilter* min_filt,
 GXTexWrapMode GXGetTexObjWrapS(GXTexObj* obj);
 GXTexWrapMode GXGetTexObjWrapT(GXTexObj* obj);
 
+void *GXGetTexObjData(GXTexObj* obj);
 u16 GXGetTexObjWidth(const GXTexObj* obj);
 u16 GXGetTexObjHeight(const GXTexObj* obj);
 GXTexFmt GXGetTexObjFmt(const GXTexObj* obj);

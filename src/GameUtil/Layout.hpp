@@ -49,6 +49,7 @@ public:
     }
 
     bool getEnabled(void) const { return mEnabled; }
+    void setEnabled(bool enabled) { mEnabled = enabled; }
 
     bool getUnk26(void) const { return mUnk26; }
     bool getUnk27(void) const { return mUnk27; }
@@ -62,6 +63,10 @@ public:
 
     void setSelectSfxID(u16 soundID) {
         mSelectSfxID = soundID;
+    }
+
+    s32 getActionSfxID() const {
+        return mActionSfxID;
     }
     void setActionSfxID(u16 soundID) {
         mActionSfxID = soundID;
@@ -128,10 +133,17 @@ struct CExBtnPaneManager_Sub {
 
 extern CExBtnPaneManager_Sub lbl_802ED5F0;
 extern CExBtnPaneManager_Sub lbl_802ED604;
+extern CExBtnPaneManager_Sub lbl_802ED858;
+extern CExBtnPaneManager_Sub lbl_802ED86C;
+extern CExBtnPaneManager_Sub lbl_802ED8D0;
+extern CExBtnPaneManager_Sub lbl_802ED924;
+
+extern "C" void fn_800C5F70(nw4r::lyt::Pane *pane, s32 arg2, bool arg3);
 
 class CExBtnPaneManager {
 public:
     typedef void (*UnkCallbackFn)(bool useCursor);
+    typedef void (*UnkCallbackFn2)(s32 arg1, s8 arg2);
 
 public:
     virtual ~CExBtnPaneManager(void);
@@ -142,21 +154,24 @@ public:
     void fn_8008F65C(u8 index, CExBtnPane *button);
 
     void fn_8008F688(CExBtnPaneManager_Sub *);
+    void fn_8008F6AC(s32 arg);
+    void fn_8008F71C(s32 arg1, s32 arg2, s32 arg3);
+    void fn_8008F80C(UnkCallbackFn);
+    void fn_8008F814(UnkCallbackFn2);
+    void fn_8008F81C(bool, s8);
 
+    CExBtnPane *fn_8008F948(void);
     void fn_8008F96C(
         nw4r::lyt::Pane *, nw4r::lyt::Pane *,
         CLayoutAnimation *, CLayoutAnimation *,
         f32
     );
-
     void fn_8008F984(bool, nw4r::lyt::DrawInfo *drawInfo);
 
-    void fn_8008F80C(UnkCallbackFn);
-
-    void fn_8008F81C(bool, s8);
-
 private:
-    char _temppad[0x48 - 0x4];
+    char _temppad[0x44 - 0x4];
+public:
+    u32 unk44;
 };
 
 class CLayout {
